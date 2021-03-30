@@ -5,18 +5,16 @@
     <!-- Banner Starts Here -->
     <div class="banner header-text">
         <div class="owl-banner owl-carousel">
-            <div class="banner-item-01" style="background-image: url('{{ asset('frontend/img/silder1.jpg')}}');">
+            @if(count($slider) > 0)
+            @foreach($slider as $key=>$value)
+            <div class="banner-item-01" style="background-image: url('{{ asset('uploads/homeslider')}}/{{$value->image}}');">
                 <div class="text-content">
-                    <h4>Welcome to M&R Solution!</h4>
-                    <h2>Your Problem Our Solution</h2>
+                    <h4>{{$value->primary_text}}</h4>
+                    <h2>{{$value->secondary_text}}</h2>
                 </div>
             </div>
-            <div class="banner-item-02" style="background-image: url('{{ asset('frontend/img/slider2.jpg')}}');">
-                <div class="text-content">
-                    <h4>Connect with Team!</h4>
-                    <h2>Your Problem Our Solution</h2>
-                </div>
-            </div>
+       @endforeach
+            @endif
         </div>
     </div>
     <!-- Banner Ends Here -->

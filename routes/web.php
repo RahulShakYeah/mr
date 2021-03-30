@@ -34,6 +34,11 @@ Route::get('/service/delete/{id}','ServiceController@destroy')->name('service.de
 Route::get('/service/edit/{id}','ServiceController@edit')->name('service.edit');
 Route::post('/service/edit/{id}','ServiceController@update')->name('service.update');
 Route::get('/sliderlist','HomeSliderController@index')->name('slider.index');
+Route::get('/slider/create','HomeSliderController@create')->name('slider.create');
+Route::post('/slider/create','HomeSliderController@store')->name('slider.store');
+Route::get('/slider/delete/{id}','HomeSliderController@destroy')->name('slider.delete');
+Route::get('/slider/edit/{id}','HomeSliderController@edit')->name('slider.edit');
+Route::post('/slider/edit/{id}','HomeSliderController@update')->name('slider.update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

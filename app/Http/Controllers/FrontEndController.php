@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomeSlider;
 use Illuminate\Http\Request;
 use App\Models\Tutorial;
 use App\Models\Service;
@@ -9,8 +10,9 @@ class FrontEndController extends Controller
 {
     //
     public function index(){
+        $slider = HomeSlider::orderBy('priority','ASC')->where('status','active')->get();
         $service = Service::where('status','active')->limit(3)->get();
-        return view('frontend.main',compact('service'));
+        return view('frontend.main',compact('service','slider'));
     }
 
     public function contact(){
