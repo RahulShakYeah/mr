@@ -132,6 +132,27 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-user"></i>&nbsp;&nbsp;
+                        <?php
+                        use App\Models\Application;
+                        $allApplicants = Application::count();
+                        ?>
+                        <p>Applicants</p>
+                        <span class="right badge badge-danger" id="msg_number">{{$allApplicants}}</span>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{route('applicant.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Show applicants list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-header">Settings</li>
 
                 <li class="nav-item">

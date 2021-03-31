@@ -111,13 +111,13 @@
                     </div>
 
                     <div class="left-content">
-                        <form action="{{route('front.applicationstore')}}" method="POST">
+                        <form action="{{route('front.applicationstore')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                         <p>
                             <span>Full Name</span>
 
                             <br>
-                            <input type="hidden" value="{{$jobs->company_name}}">
+                            <input type="hidden" name="company_name" value="{{$jobs->company_name}}">
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Your Name">
                             @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -154,7 +154,7 @@
                         </p>
 
                         <p>
-                            <span>Upload CV</span>
+                            <span>Upload CV(Type : pdf only)</span>
 
                             <br>
 
@@ -171,8 +171,8 @@
 
                             <br>
 
-                            <input type="disabled" name="job_title" class="form-control @error('job_title') is-invalid @enderror" id="job_title" value="{{$jobs->job_title}}" disabled>
-                            @error('cv')
+                            <input type="disabled" name="job_title" class="form-control @error('job_title') is-invalid @enderror" id="job_title" value="{{$jobs->job_title}}">
+                            @error('job_title')
                             <span class="invalid-feedback" role="alert">
                                                                     <strong>{{ $message }}</strong>
                                                                 </span>
@@ -183,6 +183,7 @@
                             <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-paper-plane"></i>&nbsp;Apply</button>
                         </p>
                         </form>
+                        @include('backend.include.message')
                     </div>
                 </div>
             </div>

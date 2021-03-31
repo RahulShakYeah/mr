@@ -48,6 +48,10 @@ Route::post('/job/create','JobsController@store')->name('jobs.store');
 Route::get('/job/delete/{id}','JobsController@destroy')->name('jobs.delete');
 Route::get('/job/edit/{id}','JobsController@edit')->name('jobs.edit');
 Route::post('/job/edit/{id}','JobsController@update')->name('jobs.update');
+Route::get('/applicant/listall','ApplicantController@index')->name('applicant.index');
+Route::get('/applicant/delete/{id}','ApplicantController@destroy')->name('applicant.delete');
+Route::get('/applicant/cvview/{id}','ApplicantController@cvview')->name('cv.view');
+Route::get('/applicant/cvdownload/{file}','ApplicantController@download')->name('cv.download');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
