@@ -49,98 +49,58 @@
     <div class="latest-products">
         <div class="container">
             <div class="row">
+                @if(count($jobs) > 0)
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>Featured Jobs</h2>
-                        <a href="jobs.html">view more <i class="fa fa-angle-right"></i></a>
+                        <a href="{{route('front.job')}}">view more <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                    @foreach($jobs as $key=>$value)
+                        <div class="col-md-4">
                     <div class="product-item">
                         <a href="job-details.html"><img src="{{asset('frontend/img/job.jpg')}}" alt=""></a>
                         <div class="down-content">
-                            <a href="job-details.html"><h4>Lorem ipsum dolor sit amet</h4></a>
+                            <a href="{{route('front.jobspecific',$value->id)}}"><h4>{{$value->job_title}}</h4></a>
 
-                            <h6>$60 000</h6>
+                            <h6>Salary : {{$value->salary}}</h6>
 
-                            <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
+                            <h4><small><i class="fa fa-briefcase"></i>&nbsp;{{$value->employement_type == "full-time"?"Full Time":"Part Time"}}<br> <strong><i class="fa fa-building"></i> {{$value->company_name}}</strong></small></h4>
+
 
                             <small>
-                                <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
+                                <strong title="Posted on"><i class="fa fa-calendar"></i> {{date('d F Y',strtotime($value->created_at))}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Type"> <i class="fa fa-money-bill"></i> Salary : {{$value->salary}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                             </small>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="job-details.html"><img src="{{asset('frontend/img/job.jpg')}}" alt=""></a>
-                        <div class="down-content">
-                            <a href="job-details.html"><h4>Lorem ipsum dolor sit amet</h4></a>
-
-                            <h6>$60 000</h6>
-
-                            <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
-
-                            <small>
-                                <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="job-details.html"><img src="{{asset('frontend/img/job.jpg')}}" alt=""></a>
-                        <div class="down-content">
-                            <a href="job-details.html"><h4>Lorem ipsum dolor sit amet</h4></a>
-
-                            <h6>$60 000</h6>
-
-                            <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
-
-                            <small>
-                                <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
 
     <div class="container">
-
+        @if(count($service) > 0)
         <div class="col-md-12">
             <div class="section-heading">
                 <h2>Services</h2>
                 <a href="{{route('front.service')}}">view more <i class="fa fa-angle-right"></i></a>
             </div>
         </div>
-
-
-        <div class="row">
-            @if(count($service) > 0)
+            <div class="row">
                 @foreach($service as $key=>$value)
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <i class="{{$value->icons}} alignleft"></i>
-                    <h3>{{$value->title}}</h3>
-                    <p>{{substr($value->description,0,80)}}...</p>
-                </div><!-- end icon-wrapper -->
-            </div><!-- end col -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <i class="{{$value->icons}} alignleft"></i>
+                            <h3>{{$value->title}}</h3>
+                            <p>{{substr($value->description,0,80)}}...</p>
+                        </div><!-- end icon-wrapper -->
+                    </div><!-- end col -->
                 @endforeach
+        </div><!-- end row -->
         @endif
-
-
-
-    </div><!-- end row -->
 
     <div class="happy-clients">
         <div class="container">

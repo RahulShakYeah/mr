@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('backend/css/OverlayScrollbars.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('backend/css/jquery.dataTables.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>

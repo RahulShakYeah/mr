@@ -18,6 +18,9 @@ Route::get('/contact','FrontEndController@contact')->name('front.contact');
 Route::get('/about','FrontEndController@about')->name('front.about');
 Route::get('/tutorial/front','FrontEndController@tutorial')->name('front.tutorial');
 Route::get('/services/front','FrontEndController@service')->name('front.service');
+Route::get('/jobs/front','FrontEndController@jobdetail')->name('front.job');
+Route::get('/jobs/specific/{id}','FrontEndController@jobspecific')->name('front.jobspecific');
+Route::post('/application/store','FrontEndController@applicationstore')->name('front.applicationstore');
 
 //backend routes
 Route::post('/contact','ContactController@store')->name('contact.store');
@@ -39,6 +42,12 @@ Route::post('/slider/create','HomeSliderController@store')->name('slider.store')
 Route::get('/slider/delete/{id}','HomeSliderController@destroy')->name('slider.delete');
 Route::get('/slider/edit/{id}','HomeSliderController@edit')->name('slider.edit');
 Route::post('/slider/edit/{id}','HomeSliderController@update')->name('slider.update');
+Route::get('/joblist','JobsController@index')->name('jobs.index');
+Route::get('/job/create','JobsController@create')->name('jobs.create');
+Route::post('/job/create','JobsController@store')->name('jobs.store');
+Route::get('/job/delete/{id}','JobsController@destroy')->name('jobs.delete');
+Route::get('/job/edit/{id}','JobsController@edit')->name('jobs.edit');
+Route::post('/job/edit/{id}','JobsController@update')->name('jobs.update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

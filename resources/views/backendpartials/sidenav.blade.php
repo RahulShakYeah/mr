@@ -25,7 +25,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="fas fa-copy"></i>&nbsp;&nbsp;
                         <p>
                             Product
                         </p>
@@ -47,7 +47,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
+                        <i class="fas fa-envelope"></i>&nbsp;&nbsp;
                         <p>
                             Contact Message
                             <?php
@@ -70,7 +70,7 @@
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-video"></i>
+                        <i class="fas fa-video"></i>&nbsp;&nbsp;
                         <p>Tutorials</p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -86,7 +86,7 @@
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fa fa-sitemap"></i>&nbsp;&nbsp;
+                        <i class="fas fa-sitemap"></i>&nbsp;&nbsp;
                         <p>Services</p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -116,18 +116,34 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-briefcase"></i>&nbsp;&nbsp;
+                        <p>Jobs</p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{route('jobs.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Show jobs list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-header">Settings</li>
 
                 <li class="nav-item">
                     <a href="{{route('register')}}" class="nav-link">
-                        <i class="fa fa-user-plus nav-icon"></i>
+                        <i class="fa fa-user-plus"></i>&nbsp;&nbsp;
                         <p>Add User</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{route('front.main')}}" target="__blank" class="nav-link">
-                        <i class="fa fa-globe"></i>&nbsp;&nbsp;
+                        <i class="fa fa-globe"></i>&nbsp;&nbsp;&nbsp;
                         <p>Open site</p>
                     </a>
                 </li>
@@ -136,7 +152,7 @@
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        <i class="nav-icon fa fa-power-off"></i>
+                        <i class="fa fa-power-off"></i>&nbsp;&nbsp;
                         {{ __('Logout') }}
                     </a>
 

@@ -25,7 +25,7 @@
 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="team.html">Our Team</a>
-                            <a class="dropdown-item" href="testimonials.html">Career</a>
+                            <a class="dropdown-item" href="{{route('front.job')}}">Career</a>
                         </div>
                     </li>
 
