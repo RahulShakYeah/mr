@@ -7,6 +7,9 @@ use App\Models\Jobs;
 class JobsController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $jobs = Jobs::orderBy('created_at','DESC')->get();
         return view('backend.jobs.list',compact('jobs'));

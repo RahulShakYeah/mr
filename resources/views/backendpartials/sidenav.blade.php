@@ -153,6 +153,22 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-building"></i>&nbsp;&nbsp;
+                        <p>Our Team</p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{route('team.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Show team list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-header">Settings</li>
 
                 <li class="nav-item">

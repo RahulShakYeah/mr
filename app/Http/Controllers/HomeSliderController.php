@@ -7,6 +7,9 @@ use App\Models\HomeSlider;
 
 class HomeSliderController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $slider = HomeSlider::orderBy('priority','ASC')->get();
         return view('backend.homeslider.list',compact('slider'));

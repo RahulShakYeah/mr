@@ -52,6 +52,12 @@ Route::get('/applicant/listall','ApplicantController@index')->name('applicant.in
 Route::get('/applicant/delete/{id}','ApplicantController@destroy')->name('applicant.delete');
 Route::get('/applicant/cvview/{id}','ApplicantController@cvview')->name('cv.view');
 Route::get('/applicant/cvdownload/{file}','ApplicantController@download')->name('cv.download');
+Route::get('/ourteam/list','OurTeamController@index')->name('team.index');
+Route::get('/ourteam/create','OurTeamController@create')->name('team.create');
+Route::post('/ourteam/create','OurTeamController@store')->name('team.store');
+Route::get('/ourteam/delete/{id}','OurTeamController@destroy')->name('team.delete');
+Route::get('/ourteam/edit/{id}','OurTeamController@edit')->name('team.edit');
+Route::post('/ourteam/edit/{id}','OurTeamController@update')->name('team.update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
