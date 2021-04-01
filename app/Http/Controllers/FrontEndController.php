@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeSlider;
+use App\Models\OurTeam;
 use Illuminate\Http\Request;
 use App\Models\Tutorial;
 use App\Models\Service;
@@ -15,7 +16,8 @@ class FrontEndController extends Controller
         $slider = HomeSlider::orderBy('priority','ASC')->where('status','active')->get();
         $service = Service::where('status','active')->limit(3)->get();
         $jobs = Jobs::orderBy('created_at','DESC')->where('status','active')->limit(3)->get();
-        return view('frontend.main',compact('service','slider','jobs'));
+        $ourteam = OurTeam::where('status','active')->limit(4)->get();
+        return view('frontend.main',compact('service','slider','jobs','ourteam'));
     }
 
     public function contact(){
@@ -79,5 +81,10 @@ class FrontEndController extends Controller
         }else{
             return redirect()->back()->with('error','Something went wrong!Please try again later');
         }
+    }
+
+    public function ourteamlist(){
+        $ourteam = OurTeam::where('status','active')->simplePaginate(9);
+        return view('frontend.ourteam',compact('ourteam'));
     }
 }

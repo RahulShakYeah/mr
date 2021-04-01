@@ -21,6 +21,7 @@ Route::get('/services/front','FrontEndController@service')->name('front.service'
 Route::get('/jobs/front','FrontEndController@jobdetail')->name('front.job');
 Route::get('/jobs/specific/{id}','FrontEndController@jobspecific')->name('front.jobspecific');
 Route::post('/application/store','FrontEndController@applicationstore')->name('front.applicationstore');
+Route::get('/ourteam/front/list','FrontEndController@ourteamlist')->name('front.ourteamlist');
 
 //backend routes
 Route::post('/contact','ContactController@store')->name('contact.store');

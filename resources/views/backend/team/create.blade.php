@@ -71,7 +71,7 @@
                         <div class="row form-group">
                             <div class="col col-md-3"><label class=" form-control-label">LinkedIn</label></div>
                             <div class="col-12 col-md-9">
-                                <input value="{{old('linkedin')}}" type="email" class="form-control form-control-sm form-control-dark" name="linkedin" placeholder="Enter the team member linkedin....">
+                                <input value="{{old('linkedin')}}" type="text" class="form-control form-control-sm form-control-dark" name="linkedin" placeholder="Enter the team member linkedin....">
                                 @error('linkedin')
                                 <span class="alert-danger col-12 col-md-9">{{$message}}</span>
                                 @enderror

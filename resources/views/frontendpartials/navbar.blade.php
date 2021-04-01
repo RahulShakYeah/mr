@@ -24,7 +24,7 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <a class="dropdown-item" href="{{route('front.ourteamlist')}}">Our Team</a>
                             <a class="dropdown-item" href="{{route('front.job')}}">Career</a>
                         </div>
                     </li>

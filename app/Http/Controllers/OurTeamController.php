@@ -92,7 +92,41 @@ class OurTeamController extends Controller
             'phone' => 'required|integer'
         ]);
 
+        $ourteam = OurTeam::findOrFail($id);
+        if($request->hasFile('photo')){
+            $oldPath = public_path().'/uploads/team/'.$ourteam->photo;
+            if(\File::exists($oldPath)){
+                \File::delete($oldPath);
+            }
 
+            $photo = $request->file('photo');
+            $newPath = public_path().'/uploads/team/';
+            $fileNameToStore = 'UpatedTeamPhoto_'.time().rand(0,999).$photo->getClientOriginalName();
+            $photo->move($newPath,$fileNameToStore);
+        }else{
+            $fileNameToStore = $ourteam->photo;
+        }
+
+        if($request->get('linkedin') == 'null'){
+            $linkedin = 'nolink';
+        }else {
+            $linkedin = $request->get('linkedin');
+        }
+
+        $ourteam->name = $request->get('name');
+        $ourteam->position = $request->get('position');
+        $ourteam->email = $request->get('email');
+        $ourteam->phone = $request->get('phone');
+        $ourteam->linkedin = $linkedin;
+        $ourteam->photo = $fileNameToStore;
+        $ourteam->status = $request->get('status');
+        $status = $ourteam->save();
+
+        if($status == true){
+            return redirect()->route('team.index')->with('success','Team Member details updated successfully');
+        }else{
+            return redirect()->route('team.index')->with('error','Something went wrong!Please try again later');
+        }
 
     }
 
