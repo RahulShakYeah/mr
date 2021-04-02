@@ -28,7 +28,7 @@
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                                         <i class="{{$value->icons}} alignleft"></i>
-                                        <h3>{{$value->title}}</h3>
+                                        <h3 style="font-weight: 200 !important;">{{$value->title}}</h3>
                                         <p>{{$value->description}}</p>
                                     </div><!-- end icon-wrapper -->
                                 </div><!-- end col -->

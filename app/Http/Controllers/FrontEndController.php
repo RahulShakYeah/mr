@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeSlider;
 use App\Models\OurTeam;
+use App\Models\ProductDetails;
+use App\Models\ProductSlider;
 use Illuminate\Http\Request;
 use App\Models\Tutorial;
 use App\Models\Service;
 use App\Models\Jobs;
 use App\Models\Application;
+use App\Models\Product;
 class FrontEndController extends Controller
 {
     //
@@ -86,5 +89,16 @@ class FrontEndController extends Controller
     public function ourteamlist(){
         $ourteam = OurTeam::where('status','active')->simplePaginate(9);
         return view('frontend.ourteam',compact('ourteam'));
+    }
+
+    public function productlist(){
+        $product = Product::where('status','active')->simplePaginate(9);
+        return view('frontend.product',compact('product'));
+    }
+
+    public function productDetails($id){
+        $productDetails = ProductDetails::with('product')->where(['product_id' => $id,'status' => 'active'])->first();
+        $productSlider = ProductSlider::where(['product_id' => $id,'status' => 'active'])->get();
+        return view('frontend.productdetails',compact('productDetails','productSlider'));
     }
 }

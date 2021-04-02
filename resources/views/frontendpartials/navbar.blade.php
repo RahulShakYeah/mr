@@ -16,7 +16,7 @@
 
                     <li class="nav-item @yield('statusservice')"><a class="nav-link" href="{{route('front.service')}}">Service</a></li>
 
-                    <li class="nav-item @yield('statusproduct')"><a class="nav-link" href="about-us.html">Product</a></li>
+                    <li class="nav-item @yield('statusproduct')"><a class="nav-link" href="{{route('front.productlist')}}">Product</a></li>
 
                     <li class="nav-item @yield('statustutorial')"><a class="nav-link" href="{{route('front.tutorial')}}">Tutorial</a></li>
 

@@ -24,7 +24,7 @@
 body {
     color: #333333;
     font-size: 15px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Bookman Old Style', sans-serif;
     line-height: 1.80857;
 }
 
@@ -1560,7 +1560,7 @@ a img.aligncenter {
     color: #999;
     margin-top: 10px;
     text-transform: none;
-    font-weight: 600;
+    font-weight: 200;
     font-size: 16px;
 }
 
@@ -1616,7 +1616,7 @@ a img.aligncenter {
     text-transform: uppercase;
     padding: 0;
     margin: 0 0 5px;
-    font-weight: 600;
+    font-weight: 200;
     letter-spacing: 0.5px;
     font-size: 15px;
     color: #999;

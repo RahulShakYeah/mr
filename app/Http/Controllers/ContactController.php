@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
+
 class ContactController extends Controller
 {
     //
-    public function __construct(){
-        $this->middleware('auth');
-    }
 
     public function store(Request $request){
         $this->validate($request,[
@@ -23,6 +23,14 @@ class ContactController extends Controller
         $contact->email = $request->get('email');
         $contact->subject = $request->get('subject');
         $contact->message = $request->get('message');
+        env('MAIL_FROM_ADDRESS',$request->get('email'));
+        $details = [
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
+            'message' => $request->get('message')
+        ];
+        Mail::to('rahulshakya123rs@gmail.com')->send(new ContactMail($details));
         $status = $contact->save();
         if ($status == true){
             return redirect()->route('front.contact')->with('success','Message has been seen successfully');

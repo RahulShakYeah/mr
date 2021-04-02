@@ -22,6 +22,8 @@ Route::get('/jobs/front','FrontEndController@jobdetail')->name('front.job');
 Route::get('/jobs/specific/{id}','FrontEndController@jobspecific')->name('front.jobspecific');
 Route::post('/application/store','FrontEndController@applicationstore')->name('front.applicationstore');
 Route::get('/ourteam/front/list','FrontEndController@ourteamlist')->name('front.ourteamlist');
+Route::get('/product/front/list','FrontEndController@productlist')->name('front.productlist');
+Route::get('/productdetails/front/list/{id}','FrontEndController@productDetails')->name('front.productDetails');
 
 //backend routes
 Route::post('/contact','ContactController@store')->name('contact.store');
@@ -59,6 +61,26 @@ Route::post('/ourteam/create','OurTeamController@store')->name('team.store');
 Route::get('/ourteam/delete/{id}','OurTeamController@destroy')->name('team.delete');
 Route::get('/ourteam/edit/{id}','OurTeamController@edit')->name('team.edit');
 Route::post('/ourteam/edit/{id}','OurTeamController@update')->name('team.update');
+Route::get('/productname/list','ProductController@index')->name('product.index');
+Route::get('/product/create','ProductController@create')->name('product.create');
+Route::post('/product/create','ProductController@store')->name('product.store');
+Route::get('/product/delete/{id}','ProductController@destroy')->name('product.delete');
+Route::get('/product/edit/{id}','ProductController@edit')->name('product.edit');
+Route::post('/product/edit/{id}','ProductController@update')->name('product.update');
+Route::get('/productslider/list','ProductSliderController@index')->name('productslider.index');
+Route::get('/productslider/create','ProductSliderController@create')->name('productslider.create');
+Route::post('/productslider/create','ProductSliderController@store')->name('productslider.store');
+Route::get('/productslider/destroy/{id}','ProductSliderController@destroy')->name('productslider.delete');
+Route::get('/productslider/edit/{id}','ProductSliderController@edit')->name('productslider.edit');
+Route::post('/productslider/edit/{id}','ProductSliderController@update')->name('productslider.update');
+Route::get('/productdetail/list','ProductDetailController@index')->name('productdetail.index');
+Route::get('/productdetail/create','ProductDetailController@create')->name('productdetail.create');
+Route::post('/productdetail/create','ProductDetailController@store')->name('productdetail.store');
+Route::get('/productdetail/delete/{id}','ProductDetailController@destroy')->name('productdetail.delete');
+Route::get('/productdetail/edit/{id}','ProductDetailController@edit')->name('productdetail.edit');
+Route::post('/productdetail/edit/{id}','ProductDetailController@update')->name('productdetail.update');
+Route::get('/users/all','ProductDetailController@alluser')->name('all.users');
+Route::get('/users/delete/{id}','ProductDetailController@deleteuser')->name('delete.user');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

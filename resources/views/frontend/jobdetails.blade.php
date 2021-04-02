@@ -31,11 +31,11 @@
 
                                     <h6>Salary : {{$value->salary}}</h6>
 
-                                    <h4><small><strong><i class="fa fa-building"></i> {{$value->location}}</strong></small></h4>
+                                    <h4><small><i class="fa fa-building"></i> {{$value->location}}</small></h4>
 
                                     <small>
-                                        <strong title="Posted on"><i class="fa fa-calendar"></i> {{date('d F Y',strtotime($value->created_at))}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                       <i class="fa fa-calendar"></i> {{date('d F Y',strtotime($value->created_at))}} &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i class="fa fa-money-bill"></i> Salary : {{$value->salary}} &nbsp;&nbsp;&nbsp;&nbsp;
                                     </small>
                                 </div>
                             </div>

@@ -50,10 +50,9 @@
                             Businesses.
                         </p>
                         <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/MrSolutionERP" target="__blank"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/mrsolution_v2020/" target="__blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/SiyZoOfficial" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

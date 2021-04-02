@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="right-image">
-                        <img src="{{asset('frontend/img/job1.jpg')}}" alt="">
+                        <img src="{{asset('frontend/img/product.jpg')}}" width="200px" height="250px" style="object-fit: cover" alt="">
                     </div>
                 </div>
             </div>
@@ -63,14 +63,14 @@
                         <div class="down-content">
                             <a href="{{route('front.jobspecific',$value->id)}}"><h4>{{$value->job_title}}</h4></a>
 
-                            <h6>Salary : {{$value->salary}}</h6>
+                            <h6 style="font-weight: 200 !important">Salary : {{$value->salary}}</h6>
 
-                            <h4><small><i class="fa fa-briefcase"></i>&nbsp;{{$value->employement_type == "full-time"?"Full Time":"Part Time"}}<br> <strong><i class="fa fa-building"></i> {{$value->company_name}}</strong></small></h4>
+                            <h4><small><i class="fa fa-briefcase"></i>&nbsp;{{$value->employement_type == "full-time"?"Full Time":"Part Time"}}<br> <i class="fa fa-building"></i> {{$value->company_name}}</small></h4>
 
 
                             <small>
-                                <strong title="Posted on"><i class="fa fa-calendar"></i> {{date('d F Y',strtotime($value->created_at))}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Type"> <i class="fa fa-money-bill"></i> Salary : {{$value->salary}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                               <i class="fa fa-calendar"></i> {{date('d F Y',strtotime($value->created_at))}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-money-bill"></i> Salary : {{$value->salary}}&nbsp;&nbsp;&nbsp;
                             </small>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <i class="{{$value->icons}} alignleft"></i>
-                            <h3>{{$value->title}}</h3>
+                            <h3 style="font-weight:200">{{$value->title}}</h3>
                             <p>{{substr($value->description,0,80)}}...</p>
                         </div><!-- end icon-wrapper -->
                     </div><!-- end col -->
