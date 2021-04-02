@@ -81,9 +81,9 @@ Route::get('/productdetail/edit/{id}','ProductDetailController@edit')->name('pro
 Route::post('/productdetail/edit/{id}','ProductDetailController@update')->name('productdetail.update');
 Route::get('/users/all','ProductDetailController@alluser')->name('all.users');
 Route::get('/users/delete/{id}','ProductDetailController@deleteuser')->name('delete.user');
-Route::get('/mail/configuration','MailConfigurationController@index')->name('mailconfig.index');
-Route::get('/mail/configuration/create','MailConfigurationController@create')->name('mailconfig.create');
-Route::post('/mail/configuration/create','MailConfigurationController@store')->name('mailconfig.store');
+//Route::get('/mail/configuration','MailConfigurationController@index')->name('mailconfig.index');
+//Route::get('/mail/configuration/create','MailConfigurationController@create')->name('mailconfig.create');
+//Route::post('/mail/configuration/create','MailConfigurationController@store')->name('mailconfig.store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
