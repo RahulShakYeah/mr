@@ -23,7 +23,6 @@ class ContactController extends Controller
         $contact->email = $request->get('email');
         $contact->subject = $request->get('subject');
         $contact->message = $request->get('message');
-        env('MAIL_FROM_ADDRESS',$request->get('email'));
         $details = [
             'name' => $request->get('name'),
             'email' => $request->get('email'),

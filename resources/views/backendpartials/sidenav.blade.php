@@ -199,6 +199,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('mailconfig.index')}}" class="nav-link">
+                        <i class="fa fa-envelope"></i>&nbsp;&nbsp;
+                        <p>Mail Configuration</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
